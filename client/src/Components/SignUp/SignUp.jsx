@@ -15,22 +15,18 @@ const SignUp = () => {
               <input type="text"
                 placeholder="Username"
                 className="input login"
-              
                 required />
             </div>
             <div className="field input-field login">
-              <input type="text"
+              <input type="email"
                 placeholder="Email"
-                className="input login"
-             
-                required />
+                className="input login"/>
             </div>
             <div className="field input-field login">
               <input
                 type="password"
                 placeholder="Password"
                 className="password login"
-              
                 required
               />
             </div>
@@ -39,7 +35,6 @@ const SignUp = () => {
                 type="password"
                 placeholder="Confirm Password"
                 className="password login"
-              
                 required
               />
             </div>

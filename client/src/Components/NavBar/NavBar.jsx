@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import './NavBar.css'
 import menu from '../../assets/menu.svg'
 import close from '../../assets/close.svg'
-import { Link , useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)
-    const navigate  = useNavigate()
+    const navigate = useNavigate()
     return (
         <>
             <div className='Nav_div'
@@ -21,15 +21,15 @@ const NavBar = () => {
                     </div>
                     <div className='nav_menu'>
                         <ul className='nav_lists'>
-                            <Link ><li className='nav_text'>Home</li></Link>
-                            <Link ><li className='nav_text'>Courses</li></Link>
-                            <Link ><li className='nav_text'>Activites</li></Link>
-                            <Link ><li className='nav_text'>About us</li></Link>
+                            <Link to='/'><li className='nav_text' >Home</li></Link>
+                            <Link to='/courses'><li className='nav_text' >Courses</li></Link>
+                            <Link to='/activities'><li className='nav_text' to='/activities'>Activites</li></Link>
+                            <Link to='/dailyupdates'><li className='nav_text' >Updates</li></Link>
                         </ul>
                     </div>
                     <div className='btn_div'>
-                        <button className='nav_btn_signup'  onClick={()=> navigate('/signup')}>Sign up</button>
-                        <button className='nav_btn_login' onClick={()=> navigate('/login')}>Login</button>
+                        <button className='nav_btn_signup' onClick={() => navigate('/signup')}>Sign up</button>
+                        <button className='nav_btn_login' onClick={() => navigate('/login')}>Login</button>
                     </div>
                     <div className='mobile_size'>
                         <img onClick={() => setToggle(!toggle)} src={toggle ? close : menu} alt="" width={40} />
@@ -37,17 +37,16 @@ const NavBar = () => {
                         <div className={` ${toggle ? 'flex' : 'hidden'} nav_mobile_menu`} >
                             <ul className='nav_lists_mobile'>
                                 <Link to='/'><li className='nav_text' onClick={() => setToggle(!toggle)}>Home</li></Link>
-                                <Link to='/aptitude'><li className='nav_text' onClick={() => setToggle(!toggle)}>Practice Tests</li></Link>
-                                <Link to='/test'><li className='nav_text' onClick={() => setToggle(!toggle)}>Test</li></Link>
-                                <Link to='/LeaderBoard'><li className='nav_text' onClick={() => setToggle(!toggle)}>LeaderBoard</li></Link>
-                                <Link to='/about'><li className='nav_text' onClick={() => setToggle(!toggle)}>About us</li></Link>
+                                <Link to='/courses'><li className='nav_text' onClick={() => setToggle(!toggle)}>Courses</li></Link>
+                                <Link to='/activities'><li className='nav_text' onClick={() => setToggle(!toggle)}>Activites</li></Link>
+                                <Link to='/dailyupdates'><li className='nav_text' onClick={() => setToggle(!toggle)}>Updates</li></Link>
                             </ul>
                             <div className='btn_div_mobile'>
                                 {
 
                                     <>
-                                        <button className='nav_btn_signup' onClick={() => { navigate('/signup') ; setToggle(!toggle) }}>Sign up</button>
-                                        <button className='nav_btn_login' onClick={() => {  navigate('/login') ;setToggle(!toggle) }}>Login</button>
+                                        <button className='nav_btn_signup' onClick={() => { navigate('/signup'); setToggle(!toggle) }}>Sign up</button>
+                                        <button className='nav_btn_login' onClick={() => { navigate('/login'); setToggle(!toggle) }}>Login</button>
                                     </>
                                 }
                             </div>

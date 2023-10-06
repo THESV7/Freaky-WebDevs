@@ -20,11 +20,6 @@ const LoginPage = () => {
                 className="password login"
               />
             </div>
-            <div className="form-link login">
-              <Link className="forgot-pass login">
-                Forgot password?
-              </Link>
-            </div>
             <div className="field button-field login">
               <button className="login">Login</button>
             </div>
