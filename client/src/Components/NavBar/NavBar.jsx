@@ -16,16 +16,15 @@ const NavBar = () => {
 
                     <div className='Navbar_logo_flex'>
                         <img src='' alt="" className='logo' />
-                        <span className="logo-text">Ace</span>
-                        <span className="logo-subtext">Aptitude</span>
+                        <span className="logo-text">Unlock</span>
+                        <span className="logo-subtext">U</span>
                     </div>
                     <div className='nav_menu'>
                         <ul className='nav_lists'>
-                            <Link to='/'><li className='nav_text'>Home</li></Link>
-                            <Link to='/aptitude'><li className='nav_text'>Practice Tests</li></Link>
-                            <Link to='/test'><li className='nav_text'>Test</li></Link>
-                            <Link to='/LeaderBoard'><li className='nav_text'>LeaderBoard</li></Link>
-                            <Link to='/about'><li className='nav_text'>About us</li></Link>
+                            <Link ><li className='nav_text'>Home</li></Link>
+                            <Link ><li className='nav_text'>Courses</li></Link>
+                            <Link ><li className='nav_text'>Activites</li></Link>
+                            <Link ><li className='nav_text'>About us</li></Link>
                         </ul>
                     </div>
                     <div className='btn_div'>

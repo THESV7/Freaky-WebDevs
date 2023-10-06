@@ -1,9 +1,14 @@
 import React from 'react'
+import Herosection from './components/Herosection'
+import PlatformServices from './components/PlatformServices'
 
 const HomePage = () => {
-  return (
-    <div>HomePage</div>
-  )
+    return (
+        <>
+            <Herosection/>
+            <PlatformServices/>
+        </>
+    )
 }
 
 export default HomePage
