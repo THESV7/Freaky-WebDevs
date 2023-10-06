@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import './NavBar.css'
 import menu from '../../assets/menu.svg'
 import close from '../../assets/close.svg'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 
 
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)
-
+    const navigate  = useNavigate()
     return (
         <>
             <div className='Nav_div'
@@ -28,8 +28,8 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className='btn_div'>
-                        <button className='nav_btn_signup' >Sign up</button>
-                        <button className='nav_btn_login'>Login</button>
+                        <button className='nav_btn_signup'  onClick={()=> navigate('/signup')}>Sign up</button>
+                        <button className='nav_btn_login' onClick={()=> navigate('/login')}>Login</button>
                     </div>
                     <div className='mobile_size'>
                         <img onClick={() => setToggle(!toggle)} src={toggle ? close : menu} alt="" width={40} />
@@ -46,8 +46,8 @@ const NavBar = () => {
                                 {
 
                                     <>
-                                        <button className='nav_btn_signup' onClick={() => { setToggle(!toggle) }}>Sign up</button>
-                                        <button className='nav_btn_login' onClick={() => { setToggle(!toggle) }}>Login</button>
+                                        <button className='nav_btn_signup' onClick={() => { navigate('/signup') ; setToggle(!toggle) }}>Sign up</button>
+                                        <button className='nav_btn_login' onClick={() => {  navigate('/login') ;setToggle(!toggle) }}>Login</button>
                                     </>
                                 }
                             </div>

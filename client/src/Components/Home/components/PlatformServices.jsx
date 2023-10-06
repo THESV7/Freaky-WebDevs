@@ -44,7 +44,7 @@ const PlatformServices = () => {
                                         <p>{description}</p>
                                     </div>
                                     <div className='service_card_btn'>
-                                        <button >Learn More</button>
+                                        <button>Learn More</button>
                                     </div>
                                 </div>
                             ))

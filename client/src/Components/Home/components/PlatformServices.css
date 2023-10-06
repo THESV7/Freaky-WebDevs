@@ -35,3 +35,11 @@
     display: flex;
     align-items: center;
 }
+
+.service_card_btn>button{
+    background-color: #0594e1;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 7px;
+}
