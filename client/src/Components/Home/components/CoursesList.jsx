@@ -17,6 +17,8 @@ const CoursesList = () => {
                     </div>
                     <div className="CoursesList_card_container">
                        <CoursesCard/>
+                       <CoursesCard/>
+                       <CoursesCard/>
                     </div>
                 </div>
             </section>

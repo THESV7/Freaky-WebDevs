@@ -87,7 +87,7 @@ const Courses = () => {
             </div>
             <div className="filter_input">
               <div className='dropdown'>
-                <input type="text" placeholder='Difficulty' value={selectedDifficulty} readOnly />
+                <input type="text" placeholder='Title' value={selectedDifficulty} readOnly />
                 <i className={`bx bx-chevron-down ${isDifficultOpen ? 'ArrowRotate' : ''}`} id="inputArrow"></i>
                 <div className={`dropdown-content ${isDifficultOpen ? 'show' : ''}`} id="difficultyMenu">
                   {
@@ -100,7 +100,7 @@ const Courses = () => {
                 </div>
               </div>
               <div className='dropdown'>
-                <input type="text" placeholder='Sort By' value={selectedSort} readOnly />
+                <input type="text" placeholder='Sort By rating' value={selectedSort} readOnly />
                 <i className={`bx bx-chevron-down ${isSortByOpen ? 'ArrowRotate' : ''}`} id="inputArrow"></i>
                 <div className={`dropdown-content ${isSortByOpen ? 'show' : ''}`} id="difficultyMenu">
                   {

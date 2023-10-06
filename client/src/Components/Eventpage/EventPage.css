@@ -1,0 +1,30 @@
+.event_section{
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.event_headline{
+    text-align: center;
+}
+
+.event_headline>h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.event_headline>p{
+    text-align: center;
+}
+
+.event_card_container{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-items: center;
+    gap: 30px;
+}
+
+.event_headline{
+    margin-bottom: 30px;
+}

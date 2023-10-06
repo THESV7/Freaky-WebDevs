@@ -25,6 +25,7 @@ const NavBar = () => {
                             <Link to='/courses'><li className='nav_text' >Courses</li></Link>
                             <Link to='/activities'><li className='nav_text' to='/activities'>Activites</li></Link>
                             <Link to='/dailyupdates'><li className='nav_text' >Updates</li></Link>
+                            <Link to='/events'><li className='nav_text' >Events</li></Link>
                         </ul>
                     </div>
                     <div className='btn_div'>
