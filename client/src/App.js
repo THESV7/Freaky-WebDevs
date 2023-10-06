@@ -8,6 +8,7 @@ import SignUp from './Components/SignUp/SignUp'
 import Courses from './Components/Courses/Courses'
 import Activities from './Components/Activities/Activities'
 import DailyUpdate from './Components/DailyUpdate/DailyUpdate'
+import Footer from './Components/Home/components/Footer'
 const App = () => {
 
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/activities' element={<Activities/>}/>
           <Route path='/dailyupdates' element={<DailyUpdate/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   )
