@@ -141,6 +141,16 @@ const handleAdminLogin = async (req, res) => {
     }
 }
 
+const getEventInfo = async (req, res) => {
+  try {
+    const allData = await eventModel.find();
+    res.send(allData);
+  } catch (error) {
+    console.error("Error fetching all questions:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 
 var userProfileRouter = express.Router();
 var userLoginRouter = express.Router();
@@ -150,6 +160,7 @@ var adminLoginRouter = express.Router();
 var videoGetRouter = express.Router() ;
 var searchRouter = express.Router()
 var subtopicRouter = express.Router()
+var eventRouter = express.Router()
 
 userProfileRouter.post('/postUserProfile', handleUserProfile);
 userLoginRouter.post('/postUserLogin', handleUserLogin);
@@ -159,5 +170,6 @@ adminLoginRouter.post('/postAdminLogin', handleAdminLogin);
 videoGetRouter.get('/getAllVideos', getAllVideoCourse)
 searchRouter.get('/search/:topic' ,getSearchTopic)
 subtopicRouter.get('/filter/:subtopic' ,getSubtopic)
+eventRouter.get('/event/getAllevent' , getEventInfo)
 
-module.exports = { userProfileRouter, userLoginRouter,subtopicRouter , videoPostingRouter, videoGetRouter ,searchRouter ,   eventPostingRouter, adminLoginRouter };
+module.exports = { userProfileRouter, userLoginRouter,subtopicRouter , eventRouter ,videoPostingRouter, videoGetRouter ,searchRouter ,   eventPostingRouter, adminLoginRouter };

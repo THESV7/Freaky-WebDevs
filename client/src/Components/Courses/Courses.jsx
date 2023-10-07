@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Courses.css'
 const Courses = () => {
 
@@ -11,71 +11,52 @@ const Courses = () => {
   const [isSortByOpen, setIsSortByOpen] = useState(false)
   const [isFilterOpen, setisFilterOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const data = [
-    {
+  useEffect(() => {
 
-    }, 
-    {
-
-    },
-    {
-
-    },
-    {
-
-    }, 
-    {
-
-    },
-    {
-
-    },
-  ]
+    const fetchdata = async () => {
+      try {
+        const response = await fetch(`http://localhost:3500/v6/api/videosData/getAllVideos`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const jsonData = await response.json();
+        setMainData(jsonData);
+        setIsLoading(false)
+        console.log(jsonData);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchdata()
+    window.scrollTo(0, 0);
+  },[])
   const [dropdownOption, setdropdownOption] = useState({
-    "General Aptitude": false,
-    "Programming": false,
-    "Verbal": false,
-    "Logical Reasoning": false,
   })
 
   const [selectedSubtopic, setSelectedSubtopic] = useState({
-    "General Aptitude": '',
-    "Programming": '',
-    "Verbal": '',
-    "Logical Reasoning": '',
   })
 
   const difficultyoptions = ["Easy", "Medium", "Hard"]
   const sotrtBy = ["A-Z", "Number"]
   const generalAptitudeSubtopics = [
-    "Problems on Trains",
-    "Time and Distance",
-    "Height and Distance",
-    "Time and Work",
-    "Simple Interest",
-    "Compound Interest"
   ];
   const programmingSubtopics = [
-    "Declarations and Initializations",
-    "Control Instructions",
-    "Expressions",
-    "Arrays",
-    "Strings",
-    "Pointers",
-    "Bitwise Operators",
-    "C Preprocessor",
-    "Functions",
-    "Structures, Unions, Enums",
-    "Input / Output",
-    "Command Line Arguments"
   ];
   const LogicalSubtopics = [
-    "Essential Part",
-    "Analogies",
-    "Verbal Classification",
-    "Letter and Symbol Series"
   ];
 
+  const handleSearchInput = async (topic) => {
+    try {
+        const response = await fetch(`http://localhost:3500/v6/api/search/${topic}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const jsonData = await response.json();
+        setMainData(jsonData);
+    } catch (error) {
+        console.log(error);
+    }
+}
   return (
     <>
       <section>
@@ -83,22 +64,9 @@ const Courses = () => {
           <h1 className='aptitude_heading'></h1>
           <div className="filter_container">
             <div className='search_div'>
-              <input type="text" placeholder='Search Topics' className='searchbar' />
+              <input type="text"  onChange={(e) => handleSearchInput(e.target.value)} placeholder='Search Topics' className='searchbar' />
             </div>
             <div className="filter_input">
-              <div className='dropdown'>
-                <input type="text" placeholder='Title' value={selectedDifficulty} readOnly />
-                <i className={`bx bx-chevron-down ${isDifficultOpen ? 'ArrowRotate' : ''}`} id="inputArrow"></i>
-                <div className={`dropdown-content ${isDifficultOpen ? 'show' : ''}`} id="difficultyMenu">
-                  {
-                    difficultyoptions.map((option, index) =>
-                      <>
-                        <a key={index}>{option}</a>
-                      </>
-                    )
-                  }
-                </div>
-              </div>
               <div className='dropdown'>
                 <input type="text" placeholder='Sort By rating' value={selectedSort} readOnly />
                 <i className={`bx bx-chevron-down ${isSortByOpen ? 'ArrowRotate' : ''}`} id="inputArrow"></i>
@@ -119,19 +87,19 @@ const Courses = () => {
               <div className="category_container">
                 <h3 className='category_heading'>Category</h3>
                 <ul className='category_ul'>
-                  <li className='category_li'>Vocational Training</li>
-                  <li className='category_li'>Finacial Management<i className={`bx bx-chevron-down ${dropdownOption["General Aptitude"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
-                  <li className='category_li' >Mental Health<i className={`bx bx-chevron-down ${dropdownOption["Programming"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
-                  <li className='category_li' >Spritual Content<i className={`bx bx-chevron-down ${dropdownOption["Verbal"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
-                  <li className='category_li' >Legal education<i className={`bx bx-chevron-down ${dropdownOption["Logical Reasoning"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
-                  <li className='category_li' >Civic education<i className={`bx bx-chevron-down ${dropdownOption["Logical Reasoning"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
-                  <li className='category_li' >Family and RelationShip<i className={`bx bx-chevron-down ${dropdownOption["Logical Reasoning"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
+                  <li className='category_li' onClick={()=> handleSearchInput('Vocational Training')}>Vocational Training</li>
+                  <li className='category_li' onClick={()=> handleSearchInput('Finacial Management')}>Finacial Management<i className={`bx bx-chevron-down ${dropdownOption["General Aptitude"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
+                  <li className='category_li' onClick={()=> handleSearchInput('Mental Health')} >Mental Health<i className={`bx bx-chevron-down ${dropdownOption["Programming"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
+                  <li className='category_li' onClick={()=> handleSearchInput('Spritual Content')} >Spritual Content<i className={`bx bx-chevron-down ${dropdownOption["Verbal"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
+                  <li className='category_li' onClick={()=> handleSearchInput('Legal education')} >Legal education<i className={`bx bx-chevron-down ${dropdownOption["Logical Reasoning"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
+                  <li className='category_li' onClick={()=> handleSearchInput('Civic education')} >Civic education<i className={`bx bx-chevron-down ${dropdownOption["Logical Reasoning"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
+                  <li className='category_li' onClick={()=> handleSearchInput('Family and RelationShip')} >Family and RelationShip<i className={`bx bx-chevron-down ${dropdownOption["Logical Reasoning"] ? 'ArrowRotate' : ''}`} id="inputArrow"></i></li>
                 </ul>
               </div>
             </div>
 
             <div className='filter'>
-              <button onClick={()=> setisFilterOpen(!isFilterOpen)}><i className='bx bx-menu-alt-right'></i></button>
+              <button onClick={() => setisFilterOpen(!isFilterOpen)}><i className='bx bx-menu-alt-right'></i></button>
             </div>
             {
 
@@ -154,7 +122,7 @@ const Courses = () => {
             }
             <div className="problem_container">
               <div className="headline_problem_container">
-                
+
               </div>
               <div className='problem_heading'></div>
               {
@@ -165,20 +133,20 @@ const Courses = () => {
                   :
                   <div className='problem_main'>
                     {
-                      data.map((data) =>
-                      <div className="CoursesList_card">
-                        <div className="Courses_card_img">
-                          <img src="course1.jpg" alt="Course 1" />
-                        </div>
-                        <div className="Courses_card_content">
-                          <div className="Courses_card_title">Course Title 1</div>
-                          <div className="Courses_card_description">
-                            This course covers various topics in web development and programming, providing valuable skills for the future.
+                      MainData.map((data ) =>
+                        <div className="CoursesList_card">
+                          <div className="Courses_card_img">
+                            <img src={data.courseUrl}co alt="Course" />
                           </div>
-                          <div className='Courses_card_rating'>4.8</div>
+                          <div className="Courses_card_content">
+                            <div className="Courses_card_title">{data.courseTitle}</div>
+                            <div className="Courses_card_description">
+                              {data.courseDescription}
+                            </div>
+                            <div className='Courses_card_rating'>{data.courseRating}</div>
+                          </div>
                         </div>
-                      </div>
-                    )
+                      )
                     }
                   </div>
               }

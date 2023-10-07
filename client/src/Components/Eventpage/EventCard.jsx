@@ -1,22 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './EventCard.css'
 const EventCard = () => {
+
+    const [data, setdata] = useState([])
+    useEffect(() => {
+        const fetchdata = async () => {
+            try {
+                const response = await fetch(`http://localhost:3500/v7/api/event/getAllevent`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const jsonData = await response.json();
+                setdata(jsonData);
+                console.log(jsonData);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchdata()
+    }, [])
     return (
         <>
-            <div className="EventPage_card">
-                <div className="EventPage_card_img">
-                    <img src="event1.jpg" alt="Event 1" />
-                </div>
-                <div className="EventPage_card_content">
-                    <div className="EventPage_card_title">Event Title 1</div>
-                    <div className="EventPage_card_description">
-                        This event covers various topics related to the specific event theme, providing valuable insights and networking opportunities.
+            {
+                data.map((data) => (
+                    <div className="EventPage_card" key={data._id}>
+                        <div className="EventPage_card_img">
+                            <img src="" alt="Event 1" />
+                        </div>
+                        <div className="EventPage_card_content">
+                            <div className="EventPage_card_title">{data.eventTitle}</div>
+                            <div className="EventPage_card_description">
+                                {data.eventDescription}
+                            </div>
+                            <div className='EventPage_card_rating'>Time: {data.eventTimings}</div>
+                            <div className='EventPage_card_rating'>Venu: {data.eventVenue}</div>
+                        </div>
                     </div>
-                    <div className='EventPage_card_rating'>Time: </div>
-                    <div className='EventPage_card_rating'>Venu: </div>
-                </div>
-            </div>
-
+                ))
+            }
         </>
     )
 }

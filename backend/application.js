@@ -4,7 +4,7 @@ var cors = require('cors') ;
 var http = require('http') ;
 var server = http.createServer(app) ;
 var Connect = require('./configure') ;
-const {userProfileRouter,userLoginRouter,videoPostingRouter,subtopicRouter,searchRouter,eventPostingRouter,adminLoginRouter,videoGetRouter} = require('./controller') ;
+const {userProfileRouter,userLoginRouter,videoPostingRouter,subtopicRouter,eventRouter,searchRouter,eventPostingRouter,adminLoginRouter,videoGetRouter} = require('./controller') ;
 
 var corsOptions = {
     origin : "http://localhost:3000" ,
@@ -21,6 +21,7 @@ app.use("/v5/api/users",adminLoginRouter) ;
 app.use("/v6/api/videosData",videoGetRouter) ;
 app.use("/v6/api/",searchRouter) ;
 app.use("/v7/api/",subtopicRouter) ;
+app.use("/v7/api/",eventRouter) ;
 
 
 Connect() ;
