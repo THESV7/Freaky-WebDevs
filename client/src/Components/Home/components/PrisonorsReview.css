@@ -257,3 +257,71 @@
 
 /* For small devices */
 @media screen and (max-width: 375px) {}
+
+
+/* Add these styles to your existing CSS or create a new CSS file for the PrisonersReview section */
+
+/* Review Section Container */
+.AboutUs_Team_container {
+    padding: 2rem; /* Add some padding for spacing */
+    background-color: #f5f5f5; /* Set a light background color */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Review Section Title */
+.AboutUs_team_content h1 {
+    font-size: 2rem; /* Increase font size */
+    color: #333; /* Set a dark text color */
+}
+
+/* Review Section Description */
+.AboutUs_team_content p {
+    font-size: 1.25rem; /* Increase font size */
+    color: #666; /* Set a slightly darker text color */
+    margin-top: 1rem; /* Add some top margin for spacing */
+}
+
+/* Swiper Container */
+.Prisoners_review_container {
+    margin-top: 2rem; /* Add some top margin for spacing */
+}
+
+/* Swiper Slide Card */
+.AboutUs_team_card {
+    background-color: #fff; /* Set a white background color */
+    border-radius: 10px; /* Add rounded corners */
+    padding: 2rem; /* Add padding for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    text-align: left; /* Align text to the left */
+}
+
+/* Reviewer Name and Role */
+.AboutUs_team_title h1 {
+    font-size: 1.5rem; /* Increase font size */
+    color: #333; /* Set a dark text color */
+}
+
+.AboutUs_team_title p {
+    font-size: 1.25rem; /* Increase font size */
+    color: #666; /* Set a slightly darker text color */
+}
+
+/* Review Text */
+.AboutUs_team_header p {
+    font-size: 1.25rem; /* Increase font size */
+    color: #555; /* Set a slightly darker text color */
+}
+
+/* Optional: Adjust the Swiper styles to match your design */
+/* Swiper Container Styles */
+.swiper-container {
+    width: 100%;
+    max-width: 800px; /* Set a maximum width for the Swiper container */
+    margin: 0 auto; /* Center the Swiper container horizontally */
+}
+
+/* Swiper Slide Styles */
+.swiper-slide {
+    text-align: center; /* Center the slide content horizontally */
+}
