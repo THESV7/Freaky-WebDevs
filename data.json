@@ -47,33 +47,57 @@
     "courseSubCategory": "Personal finance tutorials",
     "courseRating": 4.8
 }
-  ,
+,
+
 {
-    "courseUrl": "course1.jpg",
-    "courseTitle": "Course Title 1",
-    "courseDescription": "This course covers various topics in web development and programming, providing valuable skills for the future.",
-    "courseRating": 4.8
+  "courseUrl": "https://i.ytimg.com/vi/x60GHpQ8gJk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBnYTGnTOLiRSLI08LWvg1sQTEuDQ",
+  "courseTitle": "Soft Skills",
+  "courseDescription": "Welcome to our 'Soft Skills' playlist! In today's fast-paced world, developing soft skills is essential for personal and professional success. This playlist offers a curated collection of engaging videos that cover a wide range of soft skills, including communication, leadership, teamwork, time management, and more. Whether you're a student, professional, or someone looking to enhance their interpersonal abilities, these videos provide valuable insights and practical tips to help you excel in any environment. Start building your soft skills today and unlock your full potential. Explore the playlist now!",
+  "courseCategory": "Mental Health",
+  "courseSubCategory": "Soft Skills",
+  "courseRating": 4.8
+
+} 
+,
+{ 
+  "courseUrl": "https://i.ytimg.com/vi/_ucD8sc30xY/mqdefault.jpg",
+  "courseTitle": "Trade skills tutorials",
+  "courseDescription": "Welcome to our 'Trade Skills Tutorials' playlist! Are you interested in learning practical and hands-on trade skills that can open doors to rewarding careers? Look no further. This playlist offers a comprehensive collection of instructional videos covering a variety of trade skills, including carpentry, welding, electrical work, plumbing, and more. Whether you're a beginner looking to acquire new skills or a seasoned tradesperson seeking to expand your expertise, these tutorials provide step-by-step guidance and expert tips. Start your journey to mastering trade skills today and build a promising future in the world of craftsmanship. Explore the playlist now and embark on your skills-building adventure!",
+  "courseCategory": "Mental Health",
+  "courseSubCategory": "Trade skills tutorials",
+  "courseRating": 4.8
 }
-  ,
+ ,
 {
-    "courseUrl": "course1.jpg",
-    "courseTitle": "Course Title 1",
-    "courseDescription": "This course covers various topics in web development and programming, providing valuable skills for the future.",
-    "courseRating": 4.8
+  "courseUrl": "https://i.ytimg.com/vi/X3Fz_Gu5WUE/mqdefault.jpg",
+  "courseTitle": "Transform Your English Communication Skills",
+  "courseDescription": "Unlock the power of effective communication with our 'Transform Your English Communication Skills' course! Whether you're a non-native English speaker looking to improve your language proficiency or a native speaker aiming to refine your communication abilities, this comprehensive course is your pathway to success. Dive into a series of engaging lessons that cover everything from pronunciation and vocabulary enhancement to mastering the art of public speaking. With expert guidance and practical exercises, you'll gain the confidence and skills needed to excel in both personal and professional communication. Elevate your English communication skills and open doors to new opportunities. Join us on this transformative journey today!",
+  "courseCategory": "Spritual Content",
+  "courseSubCategory": "Transform Your English Communication Skills",
+  "courseRating": 4.8
 }
-   ,
+
+
+,
 {
-    "courseUrl": "course1.jpg",
-    "courseTitle": "Course Title 1",
-    "courseDescription": "This course covers various topics in web development and programming, providing valuable skills for the future.",
-    "courseRating": 4.8
+  "courseUrl": "https://i.ytimg.com/vi/fIJ86j0HIxM/mqdefault.jpg",
+  "courseTitle": "Financial management course",
+  "courseDescription": "Welcome to our 'Financial Management Course' – your key to financial empowerment! In today's complex financial landscape, understanding how to manage your money is a crucial life skill. This course is designed to equip you with the knowledge and tools you need to take control of your finances confidently. Explore essential topics such as budgeting, saving, investing, debt management, and financial planning. Whether you're just starting your financial journey or seeking to enhance your money management skills, our expert-led course offers comprehensive lessons and practical tips to help you achieve your financial goals. Take the first step towards financial security and prosperity. Enroll in our Financial Management Course now and secure a brighter financial future for yourself and your family.",
+  "courseCategory": "Spritual Content",
+  "courseSubCategory": "Financial management course",
+  "courseRating": 4.8
 }
-  ,
+,
 {
-    "courseUrl": "course1.jpg",
-    "courseTitle": "Course Title 1",
-    "courseDescription": "This course covers various topics in web development and programming, providing valuable skills for the future.",
-    "courseRating": 4.8
+  "courseUrl": "https://i.ytimg.com/vi/NvkS7O7yNcQ/mqdefault.jpg",
+  "courseTitle": "Personal finance tutorials",
+  "courseDescription": "Welcome to our 'Personal Finance Tutorials' series, your go-to resource for mastering the art of financial well-being! Achieving financial success and security is a goal we all share, and these tutorials are here to guide you every step of the way. Whether you're looking to build a solid budget, save for your future, invest wisely, or simply gain a better understanding of personal finance, our expert-led tutorials offer invaluable insights and practical advice. Join us on this journey to financial literacy and take control of your financial destiny. Start watching now and pave the way for a financially sound and prosperous future!",
+  "courseCategory": "Legal education",
+  "courseSubCategory": "Personal finance tutorials",
+  "courseRating": 4.8
 }
+
+
+
 
 ]
