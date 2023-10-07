@@ -1,24 +1,55 @@
-.newscard_container{
+/* Styles for the NewsCard component */
+.newscard_container {
     padding: 10px;
     border-radius: 7px;
     max-width: 400px;
     min-width: 300px;
-    height: 400px;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-.newscard_img{
-    background-color: lightgrey;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #fff; /* Background color for the card */
+  }
+  
+  .newscard_img {
+    background-color: #f0f0f0; /* Background color for the image container */
     height: 250px;
-}
-.newscard_heading{
+    border-radius: 7px 7px 0 0; /* Rounded corners at the top */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+  }
+  
+  .newscard_heading {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-.content_card_container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    padding: 10px; /* Add some padding to the heading */
+  }
+  
+  .newscard_heading h1 {
+    font-size: 1.5rem; /* Adjust the headline font size */
+    font-weight: 600; /* Adjust the headline font weight */
+  }
+  
+  .newscard_heading p {
+    font-size: 1rem; /* Adjust the paragraph font size */
+    color: #666; /* Paragraph text color */
+  }
+  
+  .newscard_btn {
+    text-align: center; /* Center-align the button */
+  }
+  
+  .newscard_btn span {
+    display: inline-block;
+    padding: 8px 16px; /* Add padding to the button */
+    background-color: #0594e1; /* Button background color */
+    color: #fff; /* Button text color */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  .newscard_btn span:hover {
+    background-color: #0460a6; /* Button background color on hover */
+  }
