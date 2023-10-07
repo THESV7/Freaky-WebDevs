@@ -61,3 +61,11 @@
     font-weight: bold;
   }
   
+  /* CoursesCard.css */
+.Courses_card_description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
+  -webkit-box-orient: vertical;
+}

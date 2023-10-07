@@ -277,3 +277,24 @@
 @media screen and (max-width: 375px) {
     
 }
+
+
+
+
+
+
+/* Logo Styles */
+.logo {
+  height: 30px; /* Adjust the height */
+  margin-right: 10px; /* Add margin to the right for spacing */
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.logo-subtext {
+  color: #0594e1;
+}

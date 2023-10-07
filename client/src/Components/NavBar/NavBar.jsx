@@ -3,6 +3,8 @@ import './NavBar.css'
 import menu from '../../assets/menu.svg'
 import close from '../../assets/close.svg'
 import { Link, useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUnlockAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBar = () => {
@@ -15,7 +17,7 @@ const NavBar = () => {
                 <nav className='navbar'>
 
                     <div className='Navbar_logo_flex'>
-                        <img src='' alt="" className='logo' />
+                    <FontAwesomeIcon icon={faUnlockAlt} className='logo' />
                         <span className="logo-text">Unlock</span>
                         <span className="logo-subtext">U</span>
                     </div>
