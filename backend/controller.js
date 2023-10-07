@@ -1,4 +1,6 @@
 var userProfileModel = require('./userProfileModel') ;
+var teacherVideoModel = require('./teacherVideoModel') ;
+var eventModel = require('./eventModels') ; 
 var express = require('express') ;
 const handleUserProfile = async(req,res) => {
     const {userName, userEmailAddress, userPassword, userAge, userAreaofInterest} = req.body ;
@@ -41,7 +43,7 @@ const handleUserLogin = async(req,res) => {
 const handleVideoPosting = async(req,res) => {
     const {courseTitle,courseDescription,courseUrl} = req.body ;
     try {
-        var newVideo = await userProfileModel(
+        var newVideo = await teacherVideoModel(
             {
                 courseTitle,courseDescription,courseUrl
             }
@@ -55,13 +57,32 @@ const handleVideoPosting = async(req,res) => {
     }
 }
 
+const handleEventPosting = async(req,res) => {
+    const {eventTitle,eventDescription,eventVenue,eventTimings} = req.body ;
+    try {
+        var newVideo = await eventModel (
+            {
+                eventTitle,eventDescription,eventVenue,eventTimings
+            }
+        )
+        newVideo.save() ;
+        return res.status(200).send({message:'Successfully scheduled the event',success:true,newVideo}) ;
+    }
+    catch(error)
+    {
+        return res.status(404).send({message:'Unable to do schedule the event',success:false}) ;
+    }
+}
+
 
 var userProfileRouter = express.Router() ;
 var userLoginRouter = express.Router() ;
 var videoPostingRouter = express.Router() ;
+var eventPostingRouter = express.Router() ;
 
 userProfileRouter.post('/postUserProfile',handleUserProfile) ;
 userLoginRouter.post('/postUserLogin',handleUserLogin) ;
 videoPostingRouter.post('/postNewVideo',handleVideoPosting) ;
+eventPostingRouter.post('/postNewEvent',handleEventPosting) ;
 
-module.exports = {userProfileRouter,userLoginRouter,videoPostingRouter} ;
+module.exports = {userProfileRouter,userLoginRouter,videoPostingRouter,eventPostingRouter} ;
