@@ -74,15 +74,39 @@ const handleEventPosting = async(req,res) => {
     }
 }
 
+const handleAdminLogin = async(req,res) => {
+        const {userEmailAddress,userPassword} = req.body ;
+        const adminEmailAddress = 'admin243@gmail.com' ;
+        const adminPassword = 'admin243' ;
+        try {
+              if(req.body.userEmailAddress !== adminEmailAddress){
+                return res.status(500).send({message:'Invalid credentials',success:false}) ;
+              }
+              else if( (req.body.userEmailAddress === adminEmailAddress) && (req.body.userPassword !== adminPassword) ) {
+                return res.status(500).send({message:'Invalid credentials',success:false}) ;
+              }
+            else {
+                return res.status(200).send({message:'Login successfull',success:true}) ;
+            }
+        }
+        catch(error){
+             return res.status(404).send({message:'Bad request',success:false}) ;
+        } 
+}
+
+
 
 var userProfileRouter = express.Router() ;
 var userLoginRouter = express.Router() ;
 var videoPostingRouter = express.Router() ;
 var eventPostingRouter = express.Router() ;
+var adminLoginRouter = express.Router() ;
 
 userProfileRouter.post('/postUserProfile',handleUserProfile) ;
 userLoginRouter.post('/postUserLogin',handleUserLogin) ;
 videoPostingRouter.post('/postNewVideo',handleVideoPosting) ;
 eventPostingRouter.post('/postNewEvent',handleEventPosting) ;
+adminLoginRouter.post('/postAdminLogin',handleAdminLogin) ;
 
-module.exports = {userProfileRouter,userLoginRouter,videoPostingRouter,eventPostingRouter} ;
+
+module.exports = {userProfileRouter,userLoginRouter,videoPostingRouter,eventPostingRouter,adminLoginRouter} ;
