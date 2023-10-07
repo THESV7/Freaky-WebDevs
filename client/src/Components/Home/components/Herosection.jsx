@@ -17,6 +17,9 @@ const Herosection = () => {
           <div className='hero_img_container'>
             <div className='hero_img'>
               <div className='circle_blue'></div>
+              <div className='card_blur'>
+                <p>transform yourself  to fit in social world</p>
+              </div>
             <img src={Hero_img} alt="hero_img" />
             </div>
           </div>
