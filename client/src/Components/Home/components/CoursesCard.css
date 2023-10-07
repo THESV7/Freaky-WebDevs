@@ -8,19 +8,29 @@
     background-color: #fff;
     border-radius: 5px;
     flex-direction: column;
+    border-radius: 15px;
   }
+
+  .CoursesList_card:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+}
   
   /* Style for the card image */
   .Courses_card_img > img {
     max-width: 100%;
     height: auto;
+    border-radius: 15px;
   }
+
+  
   
   .Courses_card_img{
     width: auto;
     background-color: aquamarine;
     height: 200px;
     margin: 10px;
+    border-radius: 15px;
   }
   .CoursesList_title{
     color: #0594e1;

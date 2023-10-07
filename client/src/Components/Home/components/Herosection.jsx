@@ -7,9 +7,8 @@ const Herosection = () => {
       <section className='hero_sections'>
         <div className='hero_main'>
           <div className='hero_content'>
-            <h1 className="hero_title">Up your skills
-              to advance your career path</h1>
-            <p>Provides you with the latest online learning system and material that help your knowledge growing.</p>
+            <h1 className="hero_title">Unlocking Potential Behind Bars: The Prisoner E-Learning Platform</h1>
+            <p>Our E-Learning Platform empowers incarcerated individuals through accessible courses, shaping brighter futures. Join us in making a difference.</p>
             <div className="hero_btn">
               <button>Get Started</button>
               <button>Check out</button>
