@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomePage from './Components/Home/HomePage'
+import NavBar from './Components/NavBar/NavBar'
+import LoginPage from './Components/LoginPage/LoginPage'
+import SignUp from './Components/SignUp/SignUp'
+import Courses from './Components/Courses/Courses'
+import Activities from './Components/Activities/Activities'
+import DailyUpdate from './Components/DailyUpdate/DailyUpdate'
+import Footer from './Components/Home/components/Footer'
+import EventPage from './Components/Eventpage/EventPage' 
+import NewEvent from './Components/Eventpage/NewEvent'
+import SelectMeeting from './Components/VideoConference/SelectMeeting'
+import VideoConference from './Components/VideoConference/VideoConference'
+import LoginAdmin from './Components/LoginPage/LoginAdmin'
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/signUp' element={<SignUp/>}/>
+          <Route path='/courses' element={<Courses/>}/>
+          <Route path='/activities' element={<Activities/>}/>
+          <Route path='/dailyupdates' element={<DailyUpdate/>}/>
+          <Route path='/events' element={<EventPage/>}/>
+          <Route path='/newevent' element={<NewEvent/>}/>
+          <Route path='/videoconference/:roomId' element={<VideoConference/>}/>
+          <Route path='/selectmentor' element={<SelectMeeting/>}/>
+          <Route path='/adminauth' element={<LoginAdmin/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App
