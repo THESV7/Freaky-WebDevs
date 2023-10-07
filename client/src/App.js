@@ -9,7 +9,8 @@ import Courses from './Components/Courses/Courses'
 import Activities from './Components/Activities/Activities'
 import DailyUpdate from './Components/DailyUpdate/DailyUpdate'
 import Footer from './Components/Home/components/Footer'
-import EventPage from './Components/Eventpage/EventPage'
+import EventPage from './Components/Eventpage/EventPage' 
+import NewEvent from './Components/Eventpage/NewEvent'
 const App = () => {
 
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/activities' element={<Activities/>}/>
           <Route path='/dailyupdates' element={<DailyUpdate/>}/>
           <Route path='/events' element={<EventPage/>}/>
+          <Route path='/newevent' element={<NewEvent/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

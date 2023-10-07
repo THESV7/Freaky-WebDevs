@@ -1,6 +1,6 @@
 var userProfileModel = require('./userProfileModel') ;
 var teacherVideoModel = require('./teacherVideoModel') ;
-var eventModel = require('./eventModels') ; 
+var eventModel = require('./eventModel') ; 
 var express = require('express') ;
 const handleUserProfile = async(req,res) => {
     const {userName, userEmailAddress, userPassword, userAge, userAreaofInterest} = req.body ;
