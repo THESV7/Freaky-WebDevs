@@ -19,7 +19,7 @@
   /* Style for the card image */
   .Courses_card_img > img {
     max-width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 15px;
   }
 
