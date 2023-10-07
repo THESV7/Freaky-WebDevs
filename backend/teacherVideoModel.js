@@ -4,16 +4,22 @@ var videoSchema = mongoose.Schema(
     {
         courseTitle : {
             type:String ,
-            required :true 
         } ,
 
         courseDescription : {
             type:String ,
-            required: true 
         } ,
         courseUrl : {
             type:String ,
-            required:true 
+        },
+        courseCategory:{
+            type:String,
+        },
+        courseSubCategory:{
+            type:String,
+        },
+        coursRating:{
+            type:String,
         }
     }
 )
