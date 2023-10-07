@@ -82,6 +82,44 @@ const handleEventPosting = async (req, res) => {
     }
 }
 
+const getSearchTopic = async (req, res) => {
+    try {
+      const topic = req.params.topic;
+      const searchResults = await teacherVideoModel.find(
+        {
+          "$or": [
+            { 'courseCategory': { $regex: topic } }
+          ]
+        }
+      )
+      res.send(searchResults)
+    }
+  
+    catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
+
+const getSubtopic = async (req, res) => {
+    try {
+      const subtopic = req.params.subtopic;
+      const searchResults = await teacherVideoModel.find(
+        {
+          "$or": [
+            { 'courseSubCategory': { $regex: subtopic } }
+          ]
+        }
+      )
+      res.send(searchResults)
+    }
+  
+    catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
+
 
 const handleAdminLogin = async (req, res) => {
     const { userEmailAddress, userPassword } = req.body;
@@ -110,6 +148,8 @@ var videoPostingRouter = express.Router();
 var eventPostingRouter = express.Router();
 var adminLoginRouter = express.Router();
 var videoGetRouter = express.Router() ;
+var searchRouter = express.Router()
+var subtopicRouter = express.Router()
 
 userProfileRouter.post('/postUserProfile', handleUserProfile);
 userLoginRouter.post('/postUserLogin', handleUserLogin);
@@ -117,5 +157,7 @@ videoPostingRouter.post('/postNewVideo', handleVideoPosting);
 eventPostingRouter.post('/postNewEvent', handleEventPosting);
 adminLoginRouter.post('/postAdminLogin', handleAdminLogin);
 videoGetRouter.get('/getAllVideos', getAllVideoCourse)
+searchRouter.get('/search/:topic' ,getSearchTopic)
+subtopicRouter.get('/filter/:subtopic' ,getSubtopic)
 
-module.exports = { userProfileRouter, userLoginRouter, videoPostingRouter, videoGetRouter ,  eventPostingRouter, adminLoginRouter };
+module.exports = { userProfileRouter, userLoginRouter,subtopicRouter , videoPostingRouter, videoGetRouter ,searchRouter ,   eventPostingRouter, adminLoginRouter };
