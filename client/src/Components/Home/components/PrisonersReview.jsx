@@ -38,7 +38,7 @@ const PrisonersReview = () => {
                 <div className="AboutUs_team_header">
                     <div className='AboutUs_team_title'>
                         <h1>John Smith</h1>
-                        <p>Student</p>
+                        <p>⭐⭐⭐⭐⭐</p>
                     </div>
                     <p>Prisoner E-Learning Platform has transformed my life. The courses are engaging, and I've acquired valuable skills that give me hope for a better future. Highly recommended!</p>
                 </div>
@@ -54,7 +54,7 @@ const PrisonersReview = () => {
                 <div className="AboutUs_team_header">
                     <div className='AboutUs_team_title'>
                         <h1>Lisa Johnson</h1>
-                        <p>Student</p>
+                        <p>⭐⭐⭐⭐⭐</p>
                     </div>
                     <p>I'm incredibly grateful for the Prisoner E-Learning Platform. It's given me a chance to learn, grow, and prepare for a brighter future while serving my time. The courses are fantastic!</p>
                 </div>
@@ -70,7 +70,7 @@ const PrisonersReview = () => {
                 <div className="AboutUs_team_header">
                     <div className='AboutUs_team_title'>
                         <h1>David Brown</h1>
-                        <p>Student</p>
+                        <p>⭐⭐⭐⭐⭐</p>
                     </div>
                     <p>Prisoner E-Learning Platform is a game-changer. The courses are informative, and they've helped me gain valuable skills and knowledge. It's a step towards rehabilitation.</p>
                 </div>
