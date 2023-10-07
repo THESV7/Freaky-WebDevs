@@ -13,6 +13,8 @@ import EventPage from './Components/Eventpage/EventPage'
 import NewEvent from './Components/Eventpage/NewEvent'
 import SelectMeeting from './Components/VideoConference/SelectMeeting'
 import VideoConference from './Components/VideoConference/VideoConference'
+import LoginAdmin from './Components/LoginPage/LoginAdmin'
+
 const App = () => {
 
   return (
@@ -30,6 +32,7 @@ const App = () => {
           <Route path='/newevent' element={<NewEvent/>}/>
           <Route path='/videoconference/:roomId' element={<VideoConference/>}/>
           <Route path='/selectmentor' element={<SelectMeeting/>}/>
+          <Route path='/adminauth' element={<LoginAdmin/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
