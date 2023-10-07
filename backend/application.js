@@ -4,7 +4,7 @@ var cors = require('cors') ;
 var http = require('http') ;
 var server = http.createServer(app) ;
 var Connect = require('./configure') ;
-const {userProfileRouter,userLoginRouter,videoPostingRouter} = require('./controller') ;
+const {userProfileRouter,userLoginRouter,videoPostingRouter,eventPostingRouter} = require('./controller') ;
 
 
 var corsOptions = {
@@ -17,6 +17,7 @@ app.use(cors(corsOptions)) ;
 app.use("/v1/api/users",userProfileRouter) ;
 app.use("/v2/api/users",userLoginRouter) ;
 app.use("/v3/api/videosData",videoPostingRouter) ;
+app.use("/v4/api/eventsData",eventPostingRouter) ;
 
 Connect() ;
 app.get("/", (req,res) => {
